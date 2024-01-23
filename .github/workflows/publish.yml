@@ -83,7 +83,7 @@ jobs:
         uses: docker/login-action@v3
         if: env.IS_FORK == 'false'
         with:
-          registry: ghcr.io
+          registry: us-west1-docker.pkg.dev
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
 
@@ -135,18 +135,18 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
-  sign:
-    runs-on: ubuntu-latest
-    needs: build-publish
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Sign image
-        if: env.IS_FORK == 'false'
-        uses: ./.github/actions/sign
-        with:
-          image-name: ${{ inputs.image-name }}
-          image-tag: ${{ needs.build-publish.outputs.image-tag }}
-          GHCR_USERNAME: ${{ secrets.GHCR_USERNAME }}
-          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  sign:
+#    runs-on: ubuntu-latest
+#    needs: build-publish
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#      - name: Sign image
+#        if: env.IS_FORK == 'false'
+#        uses: ./.github/actions/sign
+#        with:
+#          image-name: ${{ inputs.image-name }}
+#          image-tag: ${{ needs.build-publish.outputs.image-tag }}
+#          GHCR_USERNAME: ${{ secrets.GHCR_USERNAME }}
+#          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

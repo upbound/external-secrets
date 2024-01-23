@@ -144,12 +144,12 @@ jobs:
     with:
       dockerfile: ${{ matrix.dockerfile }}
       tag-suffix: ${{ matrix.tag-suffix }}
-      image-name: ghcr.io/${{ github.repository }}
+      image-name: us-west1-docker.pkg.dev/orchestration-build/upbound-environments/external-secrets
       build-platform: ${{ matrix.build-platform }}
       build-args: ${{ matrix.build-args }}
       build-arch: ${{ matrix.build-arch }}
       ref: ${{ github.ref }}
     secrets:
-      GHCR_USERNAME: ${{ secrets.GHCR_USERNAME }}
-      GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+      GHCR_USERNAME: ${{ secrets.GAR_USER }}
+      GHCR_TOKEN: ${{ secrets.GAR_PWD }}
 
