@@ -5289,6 +5289,18 @@ DelineaProvider
 <a href="https://docs.delinea.com/online-help/products/devops-secrets-vault/current">https://docs.delinea.com/online-help/products/devops-secrets-vault/current</a></p>
 </td>
 </tr>
+<tr>
+<td>
+<code>upboundspaces</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.UpboundProvider">
+UpboundProvider
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.SecretStoreRef">SecretStoreRef
@@ -6162,6 +6174,68 @@ External Secrets meta/v1.SecretKeySelector
 </em>
 </td>
 <td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.UpboundProvider">UpboundProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreProvider">SecretStoreProvider</a>)
+</p>
+<p>
+<p>UpboundProvider configures a store to sync secrets with Upbound Spaces.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>storeRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.UpboundStoreRef">
+UpboundStoreRef
+</a>
+</em>
+</td>
+<td>
+<p>StoreRef holds ref to Upbound Spaces secret store</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.UpboundStoreRef">UpboundStoreRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.UpboundProvider">UpboundProvider</a>)
+</p>
+<p>
+<p>UpboundStoreRef holds ref to Upbound Spaces secret store.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name of the secret store on Upbound Spaces</p>
 </td>
 </tr>
 </tbody>

@@ -2926,6 +2926,21 @@ spec:
                         - module
                         - url
                       type: object
+                    upboundspaces:
+                      description: UpboundProvider configures a store to sync secrets with Upbound Spaces.
+                      properties:
+                        storeRef:
+                          description: StoreRef holds ref to Upbound Spaces secret store
+                          properties:
+                            name:
+                              description: Name of the secret store on Upbound Spaces
+                              type: string
+                          required:
+                            - name
+                          type: object
+                      required:
+                        - storeRef
+                      type: object
                     vault:
                       description: Vault configures this store to sync secrets using Hashi provider
                       properties:
@@ -6963,6 +6978,21 @@ spec:
                         - auth
                         - module
                         - url
+                      type: object
+                    upboundspaces:
+                      description: UpboundProvider configures a store to sync secrets with Upbound Spaces.
+                      properties:
+                        storeRef:
+                          description: StoreRef holds ref to Upbound Spaces secret store
+                          properties:
+                            name:
+                              description: Name of the secret store on Upbound Spaces
+                              type: string
+                          required:
+                            - name
+                          type: object
+                      required:
+                        - storeRef
                       type: object
                     vault:
                       description: Vault configures this store to sync secrets using Hashi provider
