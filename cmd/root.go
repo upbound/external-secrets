@@ -16,6 +16,7 @@ limitations under the License.
 package cmd
 
 import (
+	"flag"
 	"os"
 	"time"
 
@@ -255,6 +256,7 @@ func Execute() {
 }
 
 func init() {
+	rootCmd.Flags().AddGoFlagSet(flag.CommandLine)
 	rootCmd.Flags().StringVar(&metricsAddr, "metrics-addr", ":8080", "The address the metric endpoint binds to.")
 	rootCmd.Flags().StringVar(&controllerClass, "controller-class", "default", "The controller is instantiated with a specific controller name and filters ES based on this property")
 	rootCmd.Flags().BoolVar(&enableLeaderElection, "enable-leader-election", false,
