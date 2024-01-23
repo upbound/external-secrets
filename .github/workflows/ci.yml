@@ -107,7 +107,7 @@ jobs:
         run: go mod download
 
       - name: Cache envtest binaries
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: bin/k8s
           key: ${{ runner.os }}-envtest-${{env.KUBERNETES_VERSION}}
